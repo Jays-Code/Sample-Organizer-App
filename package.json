@@ -1,0 +1,27 @@
+{
+  "name": "SampleBuddy",
+  "version": "1.0.0",
+  "description": "An app that allows you to input and store information about music to sample",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jays-Code/SampleBuddy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jays-Code/SampleBuddy/issues"
+  },
+  "homepage": "https://github.com/Jays-Code/SampleBuddy#readme"
+}
