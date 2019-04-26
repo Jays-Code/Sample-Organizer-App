@@ -13,9 +13,6 @@ app.use('/', (req,res) => {
     res.send("hello world");
 })
 
-//stan said write a function to print hello 
-//world to see if this route works
-
 const PORT = process.env.PORT || 3000 
 
 app.listen(PORT, () => {
