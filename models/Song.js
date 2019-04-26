@@ -1,27 +1,15 @@
-/*
-// requirements: require db/connection as 'mongoose'
-const mongoose = require('../db/connection')
-const Schema = mongoose.Schema
-// create your donut schema:
-const Donut = new Schema({
-    name: String,
-    description: String,
-    img: String,
-    price: Number,
-    qty: Number
-})
-// export the donut model with module.exports
-module.exports = mongoose.model('Donut', Donut)
-*/
-
 const mongoose = require('../conection')
 const Schema = mongoose.Schema
+//const ObjectId = mongoose.Schema.Types.ObjectId;  Will use for linking genreId to the song
 
 //Creating Song schema
 const Song = new Schema({
+    artistId: String,
     songName: String,
     key: String,
     bpm: Number,
+ // genreId: ObjectId   
 })
 
+//exporting the Song schema
 module.exports = mongoose.model('Song', Song)
