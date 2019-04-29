@@ -1,4 +1,5 @@
 // Connect to database
+const mongoose =  require('mongoose');
 if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
 }
@@ -13,3 +14,5 @@ mongoose.connection.on('error', function (err) {
 mongoose.connection.once('open', function () {
   console.log("Mongoose has connected to MongoDB!");
 });
+
+module.exports = mongoose

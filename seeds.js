@@ -1,4 +1,5 @@
 // Connect to database
+let mongoose =  require('mongoose');
 if (process.env.MONGODB_URI) {
     mongoose.connect(process.env.MONGODB_URI);
 }
@@ -14,18 +15,18 @@ mongoose.connection.once('open', function () {
     console.log("Mongoose has connected to MongoDB!");
 });
 
-let Genre = require('/models/Genre.js')
+let Genre = require('./models/Genre.js')
 
-let Artist = require('/models/Artist.js')
+let Artist = require('./models/Artist.js')
 
-let Song = require('/models/Song.js')
+let Song = require('./models/Song.js')
 
 
 //finish hardcoding this data below. Make sure all variable names match up as they should
 [
     {
         genreName: "Hip-hop",
-        newArtist: [{
+        newArtists: [{
             artistName: "Tupac Shakur",
             newSongs: [{
                 songName: "I Get Around"
@@ -34,24 +35,21 @@ let Song = require('/models/Song.js')
     },
     {
         genreName: "R&B",
-        newArtist: [{
+        newArtists: [{
             name: "Beyonce",
         }]
     }
+
 ].forEach(genre => {
     Genre.create({ genreName: genre.name })
         .then(newGenre => {
             genre.artists.forEach(artist => {
-                Artist.create({ artistName: artist.name, genreId: newGenre._id})
-                    .then(newArtist => {
+                Artist.create({ artistName: artist.artistName, genreId: newGenre._id })
+                    .then(newArtists => {
                         artist.songs.forEach(song => {
-                            Song.create({ songName: song.name, artistId: newArtist._id })
+                            Song.create({ songName: song.songName, artistId: newArtists._id })
                         })
                     })
             })
         })
-
-
-
-
-
+})

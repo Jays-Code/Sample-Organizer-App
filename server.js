@@ -9,9 +9,6 @@ app.use(methodOverride('_method'))
 
 app.set('view engine', 'hbs')
 
-app.use('/', (req,res) => {
-    res.send("hello world");
-})
 
 const PORT = process.env.PORT || 3000 
 
