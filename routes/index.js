@@ -3,7 +3,7 @@ const router = express.Router()
 
 
 
-router.get('/', function(request, respone) {
+router.get('/', function(request, response) {
     response.send('This is the root page')
 })
 
