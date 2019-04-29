@@ -9,6 +9,7 @@ app.use(methodOverride('_method'))
 
 app.set('view engine', 'hbs')
 
+app.use('/', routes);
 
 const PORT = process.env.PORT || 3000 
 

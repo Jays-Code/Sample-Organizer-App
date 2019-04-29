@@ -7,6 +7,6 @@ router.get('/', function(request, response) {
     response.send('This is the root page')
 })
 
-router.get('/')
+//router.get('/')
 
 module.exports = router
