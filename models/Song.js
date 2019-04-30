@@ -1,4 +1,4 @@
-const mongoose = require('../conection')
+const mongoose = require('../connection')
 const Schema = mongoose.Schema
 //const ObjectId = mongoose.Schema.Types.ObjectId;  Will use for linking genreId to the song
 
