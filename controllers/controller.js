@@ -33,7 +33,11 @@ const mainController = {
             //res.render's first argument refers to the views path
             res.render("Song", { song})
         })
+    },
+    addSample: function (req, res) {
+        res.render("addSample")
     }
+
 }
 
 
