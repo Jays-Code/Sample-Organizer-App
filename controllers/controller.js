@@ -42,12 +42,24 @@ const mainController = {
         Genre.create(req.body).then((genreMade)=>{
             let bodyForArtist = req.body
             bodyForArtist.genreId = genreMade._id
-            Artist.create(bodyForArtist)
-        }).then((infoBack) => { 
-res.send(infoBack)
+            // console.log(bodyForArtist)
+            return bodyForArtist
+        }).then((bodyForArtist)=>{
+            console.log(bodyForArtist)
+          let x =  Artist.create(bodyForArtist)
+          
+          console.log(x)
+          let bodyForSong = bodyForArtist
+          bodyForSong.artistId = x._id
+            return bodyForSong, x 
+            
+            console.log(bodyForSong)
+              Song.create(bodyForSong)
+            res.redirect("/")
         })
-        // Artist.create(req.body)
+     
         // Song.create(req.body)
+        //     artistId: String,
     
     }
     //create: function(req, res) {
@@ -72,7 +84,7 @@ res.send(infoBack)
 //     genreId: ObjectId
 // })
 //    const Song = new Schema({
-//     artistId: String,
+
 //     songName: String,
 //     key: String,
 //     bpm: Number,
