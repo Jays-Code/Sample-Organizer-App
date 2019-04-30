@@ -13,14 +13,15 @@ router.get('/', function(request, response) {
 
 router.get('/addSample', mainController.addSample)
 
-router.get('/genres', mainController.genreIndex)
-router.get('/artists', mainController.artistIndex)
-router.get('/songs', mainController.songIndex)
+router.get('/Genres', mainController.genreIndex)
+router.get('/Artists', mainController.artistIndex)
+router.get('/Songs', mainController.songIndex)
 
-router.get('/genre/:id', mainController.oneGenre)
-router.get('/artist/:id', mainController.oneArtist)
-router.get('/song/:id', mainController.oneSong)
+router.get('/Genre/:id', mainController.oneGenre)
+router.get('/Artist/:id', mainController.oneArtist)
+router.get('/Song/:id', mainController.oneSong)
 
+router.post('/createAll', mainController.createAll)
 
 
     

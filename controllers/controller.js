@@ -36,9 +36,50 @@ const mainController = {
     },
     addSample: function (req, res) {
         res.render("addSample")
+    },
+    createAll: function(req, res) {
+        console.log(req.body)
+        Genre.create(req.body).then((genreMade)=>{
+            let bodyForArtist = req.body
+            bodyForArtist.genreId = genreMade._id
+            Artist.create(bodyForArtist)
+        }).then((infoBack) => { 
+res.send(infoBack)
+        })
+        // Artist.create(req.body)
+        // Song.create(req.body)
+    
     }
+    //create: function(req, res) {
+       // console.log(req);
+     //   Donut.create(req.body).then(() => res.redirect("/"));
+   //   },
+   
+
+
+
+//    { genreName: 'hello',
+//    artistName: 'world',
+//    songName: 'hey',
+//    bpm: 'hi',
+//    key: 'whats' }
+
+//    const Genre = new Schema({
+//     genreName: String,
+// })
+//    const Artist = new Schema ({
+//     artistName: String, 
+//     genreId: ObjectId
+// })
+//    const Song = new Schema({
+//     artistId: String,
+//     songName: String,
+//     key: String,
+//     bpm: Number,
+ 
 
 }
+
 
 
 module.exports = mainController     
