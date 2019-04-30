@@ -16,6 +16,10 @@ router.get('/genres', mainController.genreIndex)
 router.get('/artists', mainController.artistIndex)
 router.get('/songs', mainController.songIndex)
 
+router.get('/genre/:id', mainController.oneGenre)
+router.get('/artist/:id', mainController.oneArtist)
+router.get('/song/:id', mainController.oneSong)
+
     
 
 
