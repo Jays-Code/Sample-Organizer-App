@@ -15,58 +15,77 @@ const mainController = {
     },
     songIndex: function (req, res) {
         Song.find().then(showSongs => {
-            res.render("Songs", { showSongs})
+            res.render("Songs", { showSongs })
         })
     },
     oneGenre: function (req, res) {
         Genre.findById(req.params.id).then(genre => {
-            res.render("Genre", { genre})
-            })
+            res.render("Genre", { genre })
+        })
     },
     oneArtist: function (req, res) {
         Artist.findById(req.params.id).then(artist => {
-            res.render("Artist", { artist})
+            res.render("Artist", { artist })
         })
     },
     oneSong: function (req, res) {
         Song.findById(req.params.id).then(song => {
             //res.render's first argument refers to the views path
-            res.render("Song", { song})
+            res.render("Song", { song })
         })
     },
-    addSample: function (req, res) {
-        res.render("addSample")
-    },
-    createAll: function(req, res) {
+    addGenre: function (req, res) {
+        res.render("addGenre")},
+    
+    newGenre: function (req, res) {
+        Genre.create(req.body).then(() => { res.redirect("/Genres") })
+
+    }
+
+}
+
+
+module.exports = mainController
+
+//},
+/*
+
+    createAll: function (req, res) {
         console.log(req.body)
-        Genre.create(req.body).then((genreMade)=>{
+        Genre.create(req.body).then((genreMade) => {
             let bodyForArtist = req.body
             bodyForArtist.genreId = genreMade._id
             // console.log(bodyForArtist)
             return bodyForArtist
-        }).then((bodyForArtist)=>{
+        }).then((bodyForArtist) => {
             console.log(bodyForArtist)
-          let x =  Artist.create(bodyForArtist)
-          
-          console.log(x)
-          let bodyForSong = bodyForArtist
-          bodyForSong.artistId = x._id
-            return bodyForSong, x 
-            
+            let x = Artist.create(bodyForArtist)
+
+            console.log(x)
+            let bodyForSong = bodyForArtist
+            bodyForSong.artistId = x._id
+            return bodyForSong, x
+
             console.log(bodyForSong)
-              Song.create(bodyForSong)
+            Song.create(bodyForSong)
             res.redirect("/")
         })
-     
+*/
+
+
+
+
+
+
         // Song.create(req.body)
         //     artistId: String,
-    
-    }
+
+
     //create: function(req, res) {
        // console.log(req);
      //   Donut.create(req.body).then(() => res.redirect("/"));
    //   },
-   
+
 
 
 
@@ -88,10 +107,9 @@ const mainController = {
 //     songName: String,
 //     key: String,
 //     bpm: Number,
- 
-
-}
 
 
 
-module.exports = mainController     
+
+
+

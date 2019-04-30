@@ -11,17 +11,20 @@ router.get('/', function(request, response) {
 */
 
 
-router.get('/addSample', mainController.addSample)
+router.get('/addGenre', mainController.addGenre)
+
 
 router.get('/Genres', mainController.genreIndex)
-router.get('/Artists', mainController.artistIndex)
+router.get('/Artists', mainController.artistIndex)  
 router.get('/Songs', mainController.songIndex)
 
 router.get('/Genre/:id', mainController.oneGenre)
 router.get('/Artist/:id', mainController.oneArtist)
 router.get('/Song/:id', mainController.oneSong)
 
-router.post('/createAll', mainController.createAll)
+router.post('/Genres', mainController.newGenre)
+
+//router.post('/createAll', mainController.createAll)
 
 
     
