@@ -1,7 +1,6 @@
 // Connect to database
 let mongoose = require('../SampleBuddy/connection.js');
 
-
 let Genre = require('./models/Genre.js')
 
 let Artist = require('./models/Artist.js')
@@ -44,11 +43,11 @@ let allMusic =
 allMusic.forEach(genre => {
     Genre.create({ genreName: genre.genreName })
         .then(newGenre => {
-            genre.artists.forEach(artist => {
+            newGenre.artist.forEach(artist => {
                 Artist.create({ artistName: artist.artistName, genreId: newGenre._id })
-                    .then(newArtists => {
-                        artist.songs.forEach(song => {
-                            Song.create({ songName: song.songName, artistId: newArtists._id })
+                    .then(newArtist => {
+                        newArtist.songs.forEach(song => {
+                            Song.create({ songName: song.songName, artistId: newArtist._id })
                         })
                     })
             })

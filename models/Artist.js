@@ -6,6 +6,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const Artist = new Schema ({
     artistName: String, 
+    song: [],
     genreId: ObjectId
 })
 
