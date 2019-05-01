@@ -3,17 +3,16 @@
 
 {{#each showGenres}}
 			<div class="genre-tabs">
-				{{genreName}}
+				<a href="/Genres/{{_id}}">{{genreName}}</a>
                 <!--
 				<img width="40vw" height="40vh" src={{img}}>
-               
-				<a href="{{_id}}"><h3>See more</h3></a>
+        
                  -->
 			</div>
 
 		{{/each}}
 
-<a href="/addGenre"><h2>Add a genre to the collection</h2></a>
-<a href="/addArtist"><h2>Add an artist to the collection</h2></a>
-<a href="/addSong"><h2>Add a song to the collection</h2></a>
+<a href="/addGenre"><h3>Add a genre to the collection</h3></a>
+<a href="/addArtist"><h3>Add an artist to the collection</h3></a>
+<a href="/addSong"><h3>Add a song to the collection</h3></a>
 </main>
