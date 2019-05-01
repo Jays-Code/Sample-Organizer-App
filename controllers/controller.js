@@ -84,9 +84,14 @@ const mainController = {
     },
     //get clarification on this function
     updateSong: function(req, res) {
-        Song.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((updateSong) => {
-            res.redirect('/Songs');
+        console.log(req.params.id)
+        //Song.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((updateSong) => {
+           // res.redirect('/Songs');
+       // })
+        Song.updateOne({_id: req.params.id}, req.body).then(() => {
+            res.redirect("/Songs");
         })
+        
     } 
 }
 

@@ -6,8 +6,8 @@ const Schema = mongoose.Schema
 const Song = new Schema({
     artistId: String,
     songName: String,
-    key: String,
-    bpm: Number,
+    songKey: String,
+    songBpm: Number,
  // genreId: ObjectId   
 })
 
