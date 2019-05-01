@@ -4,11 +4,13 @@ const mainController = require('../controllers/controller')
 
 
 
-
+/* TEST for the root page
 router.get('/', function(request, response) {
     response.send('This is the root page')
 })
+*/
 
+router.get('/', mainController.rootPage)
 router.get('/addGenre', mainController.addGenre)
 router.post('/Genres', mainController.newGenre)
 //router.put('/Genres/:id', mainController.editGenre)
@@ -21,8 +23,9 @@ router.delete('/Artists/:id', mainController.deleteArtist)
 
 router.get('/addSong', mainController.addSong)
 router.post('/Songs', mainController.newSong)
-router.get('/Songs/:id', mainController.editSong)
 router.put('/Songs/:id', mainController.updateSong)
+
+router.get('/Songs/:id/edit', mainController.editSong)
 router.delete('/Songs/:id', mainController.deleteSong)
 
 

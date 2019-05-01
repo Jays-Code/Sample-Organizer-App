@@ -1,0 +1,29 @@
+<main>
+
+	<h3>Edit this song</h3>
+
+	<a href="/">Return to the Home Page</a>
+
+	<div id="edit">
+
+            
+		    <form action="/Songs/{{song._id}}?_method=PUT" method="POST">
+            
+
+ <!--- what it was previously           
+<form action="/Songs/{{_id}}?_method=PUT" method="POST">
+--->
+
+            <label for="songName">Song Name:</label>
+			<input type="text" name="songName" value={{song.songName}}>
+            </br>
+            <label for="songBpm">Song BPM:</label>
+			<input type="number" name="songBpm" value={{song.songBpm}}>
+            </br>
+            <label for="songKey">Song Key:</label>
+			<input type="text" name="songKey" value={{song.songKey}}>
+			<input type="submit" value="Submit">
+		</form>
+
+	</div>
+</main>

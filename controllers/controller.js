@@ -3,6 +3,10 @@ const Artist = require("../models/Artist");
 const Song = require("../models/Song");
 
 const mainController = {
+    //root page
+    rootPage: function(req, res) {
+        res.render("rootPage")
+    },
     //indexes of all genres/artists/songs
     genreIndex: function (req, res) {
         Genre.find().then(showGenres => {
@@ -75,13 +79,13 @@ const mainController = {
         )},
     editSong: function(req, res) {
         Song.findById(req.params.id).then(song => {
-            res.render("Songs/edit", { song});
+            res.render("editSong", { song});
         })
     },
     //get clarification on this function
     updateSong: function(req, res) {
-        Song.findByIdAndUpdate(req.params.id, req.body, {new: true}).then(() => {
-            res.redirect('/Songs' + req.params.id);
+        Song.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((updateSong) => {
+            res.redirect('/Songs');
         })
     } 
 }
