@@ -36,6 +36,8 @@ const mainController = {
             res.render("Song", { song })
         })
     },
+
+    //genre functions
     addGenre: function (req, res) {
         res.render("addGenre")
     },
@@ -47,6 +49,7 @@ const mainController = {
         Genre.findByIdAndRemove(req.params.id).then(() => 
             res.redirect('/Genres')
         )},
+    //artist functions
     addArtist: function (req, res) {
             res.render("addArtist")
         },
@@ -57,9 +60,20 @@ const mainController = {
     deleteArtist: function(req, res) {
             Artist.findByIdAndRemove(req.params.id).then(() => 
                 res.redirect('/Artists')
-            )}
+            )},
+    //song functions
+    addSong: function (req, res) {
+        res.render("addSong")
+    },
 
-  
+    newSong: function (req, res) {
+        Song.create(req.body).then(() => { res.redirect("/Songs") })
+    },
+    deleteSong: function(req, res) {
+        Song.findByIdAndRemove(req.params.id).then(() => 
+            res.redirect('/Songs')
+        )}
+    //make an editSong
 }
 
 

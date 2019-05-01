@@ -4,3 +4,22 @@
 key, bpm, edit, and delete button for this song.
 
 --->
+
+<h2>{{songName}}</h2>
+
+{{#each showSongs}}
+			<div class="song-tabs">
+				<a href="/Songs/{{_id}}">{{songName}}</a>
+                <!--
+				<img width="40vw" height="40vh" src={{img}}>
+        
+                 -->
+			</div>
+
+		{{/each}}
+
+
+
+		<form action="/Songs/{{artist._id}}?_method=DELETE" method="POST">
+			<input type="submit" value="delete">
+		</form>

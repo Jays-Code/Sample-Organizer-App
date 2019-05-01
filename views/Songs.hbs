@@ -4,3 +4,23 @@
 list songs
 
 --->
+
+
+<main>
+	<h2>Choose your artist</h2>
+
+{{#each showSongs}}
+			<div class="song-tabs">
+				<a href="/Songs/{{_id}}">{{songName}}</a>
+                <!--
+				<img width="40vw" height="40vh" src={{img}}>
+        
+                 -->
+			</div>
+
+		{{/each}}
+
+<a href="/addGenre"><h3>Add a genre to the collection</h3></a>
+<a href="/addArtist"><h3>Add an artist to the collection</h3></a>
+<a href="/addSong"><h3>Add a song to the collection</h3></a>
+</main>
