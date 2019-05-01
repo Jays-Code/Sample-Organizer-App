@@ -14,6 +14,11 @@ router.post('/Genres', mainController.newGenre)
 //router.put('/Genres/:id', mainController.editGenre)
 router.delete('/Genres/:id', mainController.deleteGenre)
 
+router.get('/addArtist', mainController.addArtist)
+router.post('/Artists', mainController.newArtist)
+//router.put('/Genres/:id', mainController.editGenre)
+router.delete('/Artists/:id', mainController.deleteArtist)
+
 
 router.get('/Genres', mainController.genreIndex)
 router.get('/Artists', mainController.artistIndex)  

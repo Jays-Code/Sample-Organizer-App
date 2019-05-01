@@ -3,6 +3,7 @@ const Artist = require("../models/Artist");
 const Song = require("../models/Song");
 
 const mainController = {
+    //indexes of all genres/artists/songs
     genreIndex: function (req, res) {
         Genre.find().then(showGenres => {
             res.render("Genres", { showGenres })
@@ -18,6 +19,7 @@ const mainController = {
             res.render("Songs", { showSongs })
         })
     },
+    //for single genre/artist/song
     oneGenre: function (req, res) {
         Genre.findById(req.params.id).then(genre => {
             res.render("Genre", { genre })
@@ -44,7 +46,20 @@ const mainController = {
     deleteGenre: function(req, res) {
         Genre.findByIdAndRemove(req.params.id).then(() => 
             res.redirect('/Genres')
-        )}
+        )},
+    addArtist: function (req, res) {
+            res.render("addArtist")
+        },
+    
+    newArtist: function (req, res) {
+            Artist.create(req.body).then(() => { res.redirect("/Artists") })
+        },
+    deleteArtist: function(req, res) {
+            Artist.findByIdAndRemove(req.params.id).then(() => 
+                res.redirect('/Artists')
+            )}
+
+  
 }
 
 

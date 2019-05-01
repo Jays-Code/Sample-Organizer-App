@@ -4,3 +4,22 @@ display each song for a single artist as clickable links.
 also a delete button for this artist.
 
 --->
+
+<h2>{{artistName}}</h2>
+
+{{#each showSongs}}
+			<div class="song-tabs">
+				<a href="/Artists/{{_id}}">{{artistName}}</a>
+                <!--
+				<img width="40vw" height="40vh" src={{img}}>
+        
+                 -->
+			</div>
+
+		{{/each}}
+
+
+
+		<form action="/Artists/{{artist._id}}?_method=DELETE" method="POST">
+			<input type="submit" value="delete">
+		</form>
