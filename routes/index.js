@@ -19,6 +19,12 @@ router.post('/Artists', mainController.newArtist)
 //router.put('/Artists/:id', mainController.editGenre)
 router.delete('/Artists/:id', mainController.deleteArtist)
 
+router.get('/addSong', mainController.addSong)
+router.post('/Songs', mainController.newSong)
+router.get('/Songs/:id', mainController.editSong)
+router.put('/Songs/:id', mainController.updateSong)
+router.delete('/Songs/:id', mainController.deleteSong)
+
 
 router.get('/Genres', mainController.genreIndex)
 router.get('/Artists', mainController.artistIndex)  
@@ -29,10 +35,6 @@ router.get('/Genres/:id', mainController.oneGenre)
 router.get('/Artists/:id', mainController.oneArtist)
 router.get('/Songs/:id', mainController.oneSong)
 
-router.get('/addSong', mainController.addArtist)
-router.post('/Songs', mainController.newArtist)
-//router.put('/Songs/:id', mainController.editGenre)
-router.delete('/Songs/:id', mainController.deleteArtist)
 
 
 //router.post('/createAll', mainController.createAll)

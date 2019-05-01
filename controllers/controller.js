@@ -72,8 +72,18 @@ const mainController = {
     deleteSong: function(req, res) {
         Song.findByIdAndRemove(req.params.id).then(() => 
             res.redirect('/Songs')
-        )}
-    //make an editSong
+        )},
+    editSong: function(req, res) {
+        Song.findById(req.params.id).then(song => {
+            res.render("Songs/edit", { song});
+        })
+    },
+    //get clarification on this function
+    updateSong: function(req, res) {
+        Song.findByIdAndUpdate(req.params.id, req.body, {new: true}).then(() => {
+            res.redirect('/Songs' + req.params.id);
+        })
+    } 
 }
 
 
