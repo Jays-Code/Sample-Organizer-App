@@ -35,13 +35,16 @@ const mainController = {
         })
     },
     addGenre: function (req, res) {
-        res.render("addGenre")},
-    
+        res.render("addGenre")
+    },
+
     newGenre: function (req, res) {
         Genre.create(req.body).then(() => { res.redirect("/Genres") })
-
-    }
-
+    },
+    deleteGenre: function(req, res) {
+        Genre.findByIdAndRemove(req.params.id).then(() => 
+            res.redirect('/Genres')
+        )}
 }
 
 
