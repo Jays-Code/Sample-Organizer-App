@@ -6,11 +6,25 @@ also a delete button for this genre.
 --->
 
 
+<!---
+<a href="{{genre._id}}/edit"><h3>Edit this genre</h3></a>
+--->
 
-<a href="{{genre._id}}/edit">
-			<h3>Edit</h3>
-		</a>
-		<form action="/{{genre._id}}?_method=DELETE" method="POST">
+<h2>{{genreName}}</h2>
+
+{{#each showArtists}}
+			<div class="artist-tabs">
+				<a href="/Artists/{{_id}}">{{artistName}}</a>
+                <!--
+				<img width="40vw" height="40vh" src={{img}}>
+        
+                 -->
+			</div>
+
+		{{/each}}
+
+
+
+		<form action="/Genres/{{genre._id}}?_method=DELETE" method="POST">
 			<input type="submit" value="delete">
 		</form>
-		
