@@ -1,4 +1,5 @@
-
+<main>
+	<link rel="stylesheet" type="text/css" href="/css/pages.css">
 <h2>{{artistName}}</h2>
 
 {{#each showSongs}}
@@ -17,3 +18,4 @@
 		<form action="/Artists/{{artist._id}}?_method=DELETE" method="POST">
 			<input type="submit" value="delete">
 		</form>
+</main>

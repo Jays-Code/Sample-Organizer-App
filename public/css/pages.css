@@ -1,0 +1,28 @@
+body {
+    background: rgb(88, 236, 88);
+    
+}
+.container {
+    background-color: cornflowerblue;
+    text-align: center;
+    
+}
+
+h1 {
+    text-align:center;
+}
+
+a {
+    padding: 1vw;
+    padding: 1vh;
+    font-size: 2vh;
+    font-size: 2vw;
+    text-decoration: none;
+    border: 3px solid black;
+    display: block;
+    
+}
+
+a:hover {
+    text-decoration: underline;
+}

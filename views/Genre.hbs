@@ -6,7 +6,8 @@ also a delete button for this genre.
 <a href="{{genre._id}}/edit"><h3>Edit this genre</h3></a>
 --->
 
-
+<main>
+	<link rel="stylesheet" type="text/css" href="/css/pages.css">
 
 <h2>{{genreName}}</h2>
 
@@ -26,3 +27,4 @@ also a delete button for this genre.
 		<form action="/Genres/{{genre._id}}?_method=DELETE" method="POST">
 			<input type="submit" value="delete">
 		</form>
+</main>
